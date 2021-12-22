@@ -165,7 +165,7 @@ exports.getAllUniqueCategories = (req, res) => {
 };
 
 exports.updateStock = (req, res, next) => {
-  let myOperations = req.body.order.products.map(prod => {
+  let myOperations = req.body.order.products.map((prod) => {
     return {
       updateOne: {
         filter: { _id: prod._id },

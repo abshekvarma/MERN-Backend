@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { isSignedIn, isAuthenticated, isAdmin } = require("../controllers/auth");
+const { isSignedIn, isAuthenticated } = require("../controllers/auth");
+const { getToken, processPayment } = require("../controllers/payment");
+const { getUserById } = require("../controllers/user");
+
+router.param("userId", getUserById);
 
 router.get("/payment/gettoken/:userId", isSignedIn, isAuthenticated, getToken);
 router.post(
@@ -9,4 +13,4 @@ router.post(
   isAuthenticated,
   processPayment
 );
-module.exports = express;
+module.exports = router;

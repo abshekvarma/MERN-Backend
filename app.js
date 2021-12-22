@@ -13,7 +13,7 @@ const userRoutes = require("./routes/user");
 const categoryRoutes = require("./routes/category");
 const productRoutes = require("./routes/product");
 const orderRoutes = require("./routes/order");
-const paymentsRoutes = require("./routes/payment");
+const paymentsRoutes = require("./routes/payments");
 
 //DB Connection
 mongoose
